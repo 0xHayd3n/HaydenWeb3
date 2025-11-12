@@ -1,10 +1,30 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navigation from './components/Navigation'
+import Home from './pages/Home'
+import About from './pages/About'
+import Portfolio from './pages/Portfolio'
+import Work from './pages/Work'
+import Tools from './pages/Tools'
+import Resources from './pages/Resources'
 import './App.css'
 
 function App() {
   return (
-    <div className="app">
-      <h1 className="welcome-text">Welcome, I'm Hayden Seymour</h1>
-    </div>
+    <Router>
+      <div className="app">
+        <Navigation />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/tools" element={<Tools />} />
+            <Route path="/resources" element={<Resources />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   )
 }
 
