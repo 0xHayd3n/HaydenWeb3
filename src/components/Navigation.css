@@ -17,13 +17,18 @@
 }
 
 .nav-title {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.5px;
   color: #000;
   margin: 0;
   text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.nav-title-line {
+  display: block;
 }
 
 .nav-list {
@@ -36,7 +41,7 @@
 }
 
 .nav-link {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #000;
@@ -45,6 +50,7 @@
   padding: 8px 0;
   transition: font-weight 0.2s ease;
   letter-spacing: 0.3px;
+  position: relative;
 }
 
 .nav-link:hover {
@@ -56,6 +62,55 @@
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 4px;
+}
+
+/* Arrow animation */
+.nav-arrow {
+  position: absolute;
+  left: 15px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid #000;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.5);
+  opacity: 0;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out, top 0.3s ease-out;
+  z-index: 1;
+}
+
+.nav-arrow.visible {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+/* Social media icons */
+.nav-social {
+  display: flex;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 40px;
+}
+
+.social-icon {
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+  width: 16px;
+  height: 16px;
+}
+
+.social-icon:hover {
+  opacity: 0.6;
+}
+
+.social-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 /* Mobile menu toggle button */

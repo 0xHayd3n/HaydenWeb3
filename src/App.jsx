@@ -6,6 +6,7 @@ import Portfolio from './pages/Portfolio'
 import Work from './pages/Work'
 import Tools from './pages/Tools'
 import Resources from './pages/Resources'
+import ReadingRecommendations from './pages/ReadingRecommendations'
 import './App.css'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/work" element={<Work />} />
             <Route path="/tools" element={<Tools />} />
             <Route path="/resources" element={<Resources />} />
+            <Route path="/resources/reading-recommendations" element={<ReadingRecommendations />} />
           </Routes>
         </main>
       </div>
