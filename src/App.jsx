@@ -7,6 +7,7 @@ import Work from './pages/Work'
 import Tools from './pages/Tools'
 import Resources from './pages/Resources'
 import ReadingRecommendations from './pages/ReadingRecommendations'
+import VideoRecommendations from './pages/VideoRecommendations'
 import './App.css'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/tools" element={<Tools />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/resources/reading-recommendations" element={<ReadingRecommendations />} />
+            <Route path="/resources/video-recommendations" element={<VideoRecommendations />} />
           </Routes>
         </main>
       </div>

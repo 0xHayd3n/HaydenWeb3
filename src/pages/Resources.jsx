@@ -16,6 +16,12 @@ function Resources() {
         >
           A curated collection of books worth reading.
         </ResourceTile>
+        <ResourceTile 
+          title="Video Recommendations" 
+          to="/resources/video-recommendations"
+        >
+          A curated collection of YouTube videos worth watching.
+        </ResourceTile>
       </div>
     </div>
   )
