@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { fetchVideoMetadata } from '../utils/youtubeUtils'
 import './VideoCard.css'
 
@@ -6,6 +6,10 @@ function VideoCard({ videoUrl }) {
   const [metadata, setMetadata] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
+  const titleRef = useRef(null)
+  const containerRef = useRef(null)
+  const [shouldScroll, setShouldScroll] = useState(false)
+  const [scrollDistance, setScrollDistance] = useState(0)
 
   useEffect(() => {
     const loadMetadata = async () => {
@@ -23,6 +27,27 @@ function VideoCard({ videoUrl }) {
 
     loadMetadata()
   }, [videoUrl])
+
+  useEffect(() => {
+    if (titleRef.current && containerRef.current && metadata) {
+      // Small delay to ensure DOM is fully rendered
+      const timer = setTimeout(() => {
+        if (titleRef.current && containerRef.current) {
+          const titleWidth = titleRef.current.scrollWidth
+          const containerWidth = containerRef.current.offsetWidth
+          const needsScroll = titleWidth > containerWidth
+          setShouldScroll(needsScroll)
+          if (needsScroll && titleRef.current) {
+            const distance = titleWidth - containerWidth + 20
+            setScrollDistance(distance)
+            titleRef.current.style.setProperty('--scroll-distance', `-${distance}px`)
+          }
+        }
+      }, 100)
+      
+      return () => clearTimeout(timer)
+    }
+  }, [metadata])
 
   const handleCardClick = () => {
     if (videoUrl) {
@@ -69,16 +94,27 @@ function VideoCard({ videoUrl }) {
         ) : (
           <div className="video-placeholder">No thumbnail</div>
         )}
-        <div className="video-overlay">
-          <div className="video-overlay-content">
-            <h3 className="video-overlay-title">{metadata.title}</h3>
-            {metadata.authorName && (
-              <p className="video-overlay-author">{metadata.authorName}</p>
-            )}
+      </div>
+      <div className="video-info">
+        <div className="video-title-container" ref={containerRef}>
+          <div className={`video-title-scroll ${shouldScroll ? 'scrollable' : ''}`}>
+            <span 
+              className="video-title-text" 
+              ref={titleRef}
+            >
+              {metadata.title}
+            </span>
           </div>
         </div>
+        <div className="video-details">
+          {metadata.authorName && (
+            <span className="video-author">{metadata.authorName}</span>
+          )}
+          {metadata.duration && (
+            <span className="video-duration">{metadata.duration}</span>
+          )}
+        </div>
       </div>
-      <div className="video-title">{metadata.title}</div>
     </div>
   )
 }
