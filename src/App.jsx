@@ -10,6 +10,7 @@ import Tools from './pages/Tools'
 import Resources from './pages/Resources'
 import ReadingRecommendations from './pages/ReadingRecommendations'
 import VideoRecommendations from './pages/VideoRecommendations'
+import Meeting from './pages/Meeting'
 import './App.css'
 
 function AppContent() {
@@ -43,6 +44,7 @@ function AppContent() {
                   <Route path="/portfolio" element={<Portfolio />} />
                   <Route path="/projects" element={<Projects />} />
                   <Route path="/tools" element={<Tools />} />
+                  <Route path="/meeting" element={<Meeting />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/reading-recommendations" element={<ReadingRecommendations />} />
           <Route path="/resources/video-recommendations" element={<VideoRecommendations />} />
