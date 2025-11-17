@@ -1,0 +1,149 @@
+.page-title {
+  text-align: center;
+}
+
+.page-tagline-wrapper {
+  margin: 0 0 40px 0;
+}
+
+.page-tagline {
+  font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: 500;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  text-align: center;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #000, transparent);
+  margin: 40px 0;
+  opacity: 0.2;
+}
+
+.skills-section {
+  margin-top: 60px;
+}
+
+.skills-section-title {
+  font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 32px 0;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+.skill-category {
+  margin-bottom: 32px;
+}
+
+.skill-category-title {
+  font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.3px;
+  text-align: center;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.skill-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+  white-space: nowrap;
+}
+
+.skill-box:hover {
+  background-color: #f8f8f8;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.skill-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  fill: none;
+}
+
+.skill-name {
+  font-size: 14px;
+  color: #000;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .skills-section {
+    margin-top: 40px;
+  }
+
+  .skills-section-title {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .skill-category {
+    margin-bottom: 24px;
+  }
+
+  .skill-category-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .skills-grid {
+    gap: 6px;
+  }
+
+  .skill-box {
+    padding: 6px 10px;
+  }
+
+  .skill-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .skill-name {
+    font-size: 13px;
+  }
+
+  .page-tagline {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+
+  .section-divider {
+    margin: 32px 0;
+  }
+}
+

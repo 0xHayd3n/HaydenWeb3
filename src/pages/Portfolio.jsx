@@ -8,7 +8,7 @@ function Portfolio() {
     <div className="page">
       <h1 className="page-title">{displayText}</h1>
       <div className="page-content">
-        <p>Projects and work will be displayed here.</p>
+        <p>Projects will be displayed here.</p>
       </div>
     </div>
   )
