@@ -75,7 +75,7 @@
 
 .nav-title {
   font-family: 'Courier Prime', 'Courier New', Courier, monospace;
-  font-size: 13px;
+  font-size: var(--font-sm);
   font-weight: 600;
   letter-spacing: 0.3px;
   color: #000;
@@ -137,14 +137,14 @@
 
 .nav-link {
   font-family: 'Courier Prime', 'Courier New', Courier, monospace;
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 400;
   color: #000;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 0;
+  gap: 6px;
+  padding: 5px 0;
   transition: font-weight 0.2s ease, opacity 0.3s ease;
   letter-spacing: 0.2px;
   position: relative;
@@ -194,10 +194,10 @@
   position: fixed;
   background-color: #000;
   color: #fff;
-  padding: 6px 10px;
+  padding: 4px 8px;
   border-radius: 4px;
   font-family: 'Courier Prime', 'Courier New', Courier, monospace;
-  font-size: 11px;
+  font-size: var(--font-xs);
   font-weight: 500;
   pointer-events: none;
   z-index: 1000;

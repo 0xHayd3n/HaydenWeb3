@@ -1,8 +1,8 @@
 .cal-embed-container {
-  max-width: 1000px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
   width: 100%;
-  min-height: 600px;
+  min-height: 550px;
   border: none;
   border-radius: 0;
   overflow: hidden;
@@ -13,20 +13,31 @@
 .cal-iframe {
   width: 100%;
   height: 100%;
-  min-height: 600px;
+  min-height: 550px;
   border: none;
   display: block;
   background-color: transparent;
 }
 
-/* Ensure Cal.com widget is responsive */
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 1024px) {
   .cal-embed-container {
     min-height: 500px;
   }
 
-  .cal-embed-container iframe {
+  .cal-iframe {
     min-height: 500px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cal-embed-container {
+    min-height: 450px;
+  }
+
+  .cal-iframe {
+    min-height: 450px;
   }
 }
 

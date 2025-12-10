@@ -1,3 +1,27 @@
+:root {
+  /* Typography scale - smaller, more readable sizes */
+  --font-xs: clamp(0.625rem, 0.6rem + 0.125vw, 0.6875rem);   /* 10-11px */
+  --font-sm: clamp(0.6875rem, 0.65rem + 0.1875vw, 0.75rem);  /* 11-12px */
+  --font-base: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);    /* 12-14px */
+  --font-md: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);        /* 14-16px */
+  --font-lg: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);           /* 16-20px */
+  --font-xl: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);        /* 18-24px */
+  --font-2xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);      /* 20-28px */
+  
+  /* Spacing scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  
+  /* Layout */
+  --content-max-width: 900px;
+  --page-padding-x: clamp(1rem, 3vw, 5rem);
+  --page-padding-y: clamp(2rem, 5vw, 3.5rem);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,17 +30,20 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   margin: 0;
   font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+  font-size: var(--font-base);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 

@@ -6,7 +6,7 @@
 
 .resource-tile {
   border: 1px solid #000;
-  padding: 24px;
+  padding: var(--space-lg);
   transition: background-color 0.2s ease;
   height: 100%;
   display: flex;
@@ -19,17 +19,33 @@
 
 .resource-tile-title {
   font-family: 'Courier Prime', 'Courier New', Courier, monospace;
-  font-size: 18px;
+  font-size: var(--font-md);
   font-weight: 600;
   color: #000;
-  margin: 0 0 8px 0;
-  letter-spacing: -0.3px;
+  margin: 0 0 var(--space-xs) 0;
+  letter-spacing: -0.2px;
 }
 
 .resource-tile-content {
   font-family: 'Courier Prime', 'Courier New', Courier, monospace;
-  font-size: 14px;
+  font-size: var(--font-sm);
   color: #666;
   line-height: 1.5;
+  text-align: left;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .resource-tile {
+    padding: var(--space-md);
+  }
+  
+  .resource-tile-title {
+    font-size: var(--font-base);
+  }
+  
+  .resource-tile-content {
+    font-size: var(--font-xs);
+  }
 }
 

@@ -49,6 +49,7 @@
   position: relative;
   z-index: 1;
   transition: opacity 0.3s ease-in-out, margin-left 0.3s ease, width 0.3s ease;
+  overflow-x: hidden;
 }
 
 body.nav-collapsed .main-content {
@@ -64,9 +65,23 @@ body.nav-collapsed .main-content {
   opacity: 0;
 }
 
-/* Responsive design for smaller screens */
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 180px;
+    width: calc(100% - 180px);
+  }
+}
+
+/* Mobile breakpoint */
 @media (max-width: 768px) {
   .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 60px; /* Space for hamburger menu */
+  }
+  
+  body.nav-collapsed .main-content {
     margin-left: 0;
     width: 100%;
   }
